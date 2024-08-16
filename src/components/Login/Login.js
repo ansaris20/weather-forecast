@@ -12,10 +12,13 @@ export default function Login() {
   const onLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/login", {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        "https://weather-forecast-backend-r5al.onrender.com/login",
+        {
+          username,
+          password,
+        }
+      );
       setIsLogin(true);
       console.log(response.data.message);
     } catch (error) {

@@ -18,10 +18,13 @@ export default function Register() {
       return;
     }
     try {
-      const response = await axios.post("http://localhost:5000/register", {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        "https://weather-forecast-backend-r5al.onrender.com/register",
+        {
+          username,
+          password,
+        }
+      );
       setIsRegister(true);
       console.log(response.data.message);
     } catch (error) {
